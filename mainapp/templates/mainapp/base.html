@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}My Django Site{% endblock %}</title>
+    <!-- Add link to CSS files here if any -->
+</head>
+<body>
+    <nav>
+        <!-- Navigation bar -->
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'resources' %}">Resources</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+    </nav>
+
+    {% block content %}
+    <!-- Page content will go here -->
+    {% endblock %}
+
+    <footer>
+        <!-- Footer content -->
+    </footer>
+</body>
+</html>
