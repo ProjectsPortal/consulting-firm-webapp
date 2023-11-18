@@ -1,0 +1,12 @@
+asgiref @ file:///home/conda/feedstock_root/build_artifacts/asgiref_1685243452975/work
+Django @ file:///home/conda/feedstock_root/build_artifacts/django_1698832743720/work
+numpy @ file:///Users/runner/miniforge3/conda-bld/numpy_1695291109726/work/dist/numpy-1.26.0-cp312-cp312-macosx_11_0_arm64.whl#sha256=4be7510429f46b1b0b36ab1668a75656df966f4078b973e3f800202fd4b8d628
+pandas @ file:///Users/runner/miniforge3/conda-bld/pandas_1698375811622/work
+python-dateutil @ file:///home/conda/feedstock_root/build_artifacts/python-dateutil_1626286286081/work
+pytz @ file:///home/conda/feedstock_root/build_artifacts/pytz_1693930252784/work
+setuptools==68.2.2
+six @ file:///home/conda/feedstock_root/build_artifacts/six_1620240208055/work
+sqlparse @ file:///home/conda/feedstock_root/build_artifacts/sqlparse_1681817562700/work
+typing_extensions @ file:///home/conda/feedstock_root/build_artifacts/typing_extensions_1695040754690/work
+tzdata @ file:///home/conda/feedstock_root/build_artifacts/python-tzdata_1680081134351/work
+wheel==0.41.3
