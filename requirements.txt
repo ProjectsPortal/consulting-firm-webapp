@@ -1,8 +1,11 @@
 asgiref
 Django
+dj-database-url
+gunicorn
 numpy
 pandas
 python-dateutil
+python-decouple
 pytz
 setuptools==68.2.2
 six
@@ -10,3 +13,4 @@ sqlparse
 typing_extensions
 tzdata
 wheel==0.41.3
+whitenoise
