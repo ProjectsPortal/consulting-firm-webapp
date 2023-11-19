@@ -59,3 +59,44 @@ from .models import YourModel
 admin.site.register(YourModel)
 ```
 *(Replace YourModel with the actual model class you wish to manage.)*
+
+#### Commit Changes to GitHub
+```zsh
+git add .
+```
+```zsh
+git commit -m "comment"
+```
+```zsh
+git push origin main
+```
+*(replace `main` with branch name, e.g. `master`)*
+
+#### Build amd64 (Cloud architecture) and commit changes to docker container
+```zsh
+docker buildx build --platform linux/amd64 -t dockerhub_username/my-app:tag --push .
+```
+
+#### Authenticate Kubernetes
+```bash
+gcloud container clusters get-credentials YOUR_CLUSTER_NAME --zone YOUR_CLUSTER_ZONE --project YOUR_PROJECT_ID
+```
+
+#### Deploy using kubectl
+```bash
+kubectl apply -f deployment.yaml
+```
+```bash
+kubectl apply -f service.yaml
+```
+
+#### Monitor kubernetes
+```bash
+kubectl get deployments
+kubectl get pods
+```
+
+#### Get external IP address
+```bash
+kubectl get service
+```
