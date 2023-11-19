@@ -28,7 +28,7 @@ SECRET_KEY = config('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['.herokuapp.com', 'aspynanalytics.com', 'www.aspynanalytics.com', 'localhost','27.0.0.1']
+ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1', 'aspynanalytics.com', 'www.aspynanalytics.com']
 
 
 # Application definition
@@ -80,15 +80,16 @@ WSGI_APPLICATION = 'aspyn.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# Avoid SQLite on Heroku
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#    }
-#}
+# SQLite - For local testing, avoid using in Heroku deployed projects
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
-DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))}
+# PostGre - For Heroku deployed projects
+#DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))}
 
 
 # Password validation
