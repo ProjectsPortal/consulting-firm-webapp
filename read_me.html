@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Startup</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h3 id="startup">Startup</h3>
+<h4 id="create-a-django-app">Create a Django App:</h4>
+<p>A Django project can consist of multiple apps, which are the modules of your project. Create your first app by running the following command in the terminal (activate virtual environnment if used):</p>
+<pre><code class="language-bash">python manage.py startapp appname
+</code></pre>
+<p><em>(Replace appname with the name for your app.)</em></p>
+<h4 id="define-your-models">Define Your Models:</h4>
+<p>Inside your new app, define models in <code>models.py</code>. Models in Django are the source of information about your data. They contain the essential fields and behaviors of the data you’re storing.</p>
+<h4 id="set-up-the-database">Set Up the Database:</h4>
+<p>Run migrations to set up your database schema:</p>
+<pre><code class="language-bash">python manage.py makemigrations
+python manage.py migrate
+</code></pre>
+<p>These commands prepare and apply changes to your database, according to the models defined.</p>
+<h4 id="play-with-the-admin-site">Play with the Admin Site:</h4>
+<p>Create a superuser to access the Django admin site:</p>
+<pre><code class="language-bash">python manage.py createsuperuser
+</code></pre>
+<p>Follow the prompts to create a user, then run the server again and navigate to <code>/admin</code> on your local server to access the admin site.</p>
+<h4 id="set-up-urls-and-views">Set Up URLs and Views:</h4>
+<p>Define URL patterns in <code>urls.py</code> of your project and app to route the web requests to appropriate view functions.</p>
+<h4 id="create-templates">Create Templates:</h4>
+<p>Create HTML templates for your app. Django templates allow you to write dynamic HTML that will render data from your models.</p>
+<h4 id="static-files">Static Files:</h4>
+<p>Organize your CSS, JavaScript, and image files in the static directory within your app so that Django can serve them easily.</p>
+<h4 id="develop-your-views">Develop Your Views:</h4>
+<p>In <code>views.py</code>, write functions or classes to handle requests and render responses. These views interact with the models and templates to serve the requested web pages.</p>
+<h3 id="using-the-superuser-account">Using the Superuser Account</h3>
+<p>Access the Django Admin Interface:
+Run your Django development server with:</p>
+<pre><code class="language-bash">python manage.py runserver
+</code></pre>
+<p>Open a web browser and navigate to <a href="http://127.0.0.1:8000/admin/">http://127.0.0.1:8000/admin/</a>.<br>
+Log in using the superuser credentials you created.</p>
+<h4 id="explore-the-admin-interface">Explore the Admin Interface:</h4>
+<p>The Django admin site provides a user-friendly interface to manage the models you have defined in your Django apps.
+You can add, delete, and edit records. This includes user accounts, groups, and any other models you register with the admin.</p>
+<h4 id="register-models">Register Models:</h4>
+<p>To manage your app's models in the admin interface, you need to register them. Open the <a href="http://admin.py">admin.py</a> file in your Django app and register your models like so:</p>
+<pre><code class="language-python"><span class="hljs-keyword">from</span> django.contrib <span class="hljs-keyword">import</span> admin
+<span class="hljs-keyword">from</span> .models <span class="hljs-keyword">import</span> YourModel
+
+admin.site.register(YourModel)
+</code></pre>
+<p><em>(Replace YourModel with the actual model class you wish to manage.)</em></p>
+<h4 id="commit-changes-to-github">Commit Changes to GitHub</h4>
+<pre><code class="language-zsh">git add .
+</code></pre>
+<pre><code class="language-zsh">git commit -m &quot;comment&quot;
+</code></pre>
+<pre><code class="language-zsh">git push origin main
+</code></pre>
+<p><em>(replace <code>main</code> with branch name, e.g. <code>master</code>)</em></p>
+<h4 id="build-amd64-cloud-architecture-and-commit-changes-to-docker-container">Build amd64 (Cloud architecture) and commit changes to docker container</h4>
+<pre><code class="language-zsh">docker buildx build --platform linux/amd64 -t dockerhub_username/my-app:tag --push .
+</code></pre>
+<h4 id="authenticate-kubernetes">Authenticate Kubernetes</h4>
+<pre><code class="language-bash">gcloud container clusters get-credentials YOUR_CLUSTER_NAME --zone YOUR_CLUSTER_ZONE --project YOUR_PROJECT_ID
+</code></pre>
+<h4 id="deploy-using-kubectl-first-upload-to-google-cloud-shell">Deploy using kubectl (first upload to google cloud shell)</h4>
+<pre><code class="language-bash">kubectl apply -f deployment.yaml
+</code></pre>
+<pre><code class="language-bash">kubectl apply -f service.yaml
+</code></pre>
+<h4 id="monitor-kubernetes">Monitor kubernetes</h4>
+<pre><code class="language-bash">kubectl get deployments
+kubectl get pods
+</code></pre>
+<h4 id="get-external-ip-address">Get external IP address</h4>
+<pre><code class="language-bash">kubectl get service
+</code></pre>
+
+        
+        
+    </body>
+    </html>

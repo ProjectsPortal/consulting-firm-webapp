@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-g(xo49w-%&pg^0i0lv4m2o1)u-*f6%mo&kshpqa+45+a@du1=!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'aspyn-analytics.19lrdsuuqdeo.us-south.codeengine.appdomain.cloud']
+ALLOWED_HOSTS = ['127.0.0.1', '*']
 
 
 # Application definition

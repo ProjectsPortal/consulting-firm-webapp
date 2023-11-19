@@ -82,7 +82,7 @@ docker buildx build --platform linux/amd64 -t dockerhub_username/my-app:tag --pu
 gcloud container clusters get-credentials YOUR_CLUSTER_NAME --zone YOUR_CLUSTER_ZONE --project YOUR_PROJECT_ID
 ```
 
-#### Deploy using kubectl
+#### Deploy using kubectl (first upload to google cloud shell)
 ```bash
 kubectl apply -f deployment.yaml
 ```
