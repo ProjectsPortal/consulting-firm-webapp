@@ -1,27 +1,59 @@
 <!DOCTYPE html>
 <html>
+{% load static %}
 <head>
-    <title>{% block title %}My Django Site{% endblock %}</title>
-    <!-- Add link to CSS files here if any -->
+    <title>{% block title %}Aspyn Analytics{% endblock %}</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
 </head>
+
 <body>
-    <nav>
-        <!-- Navigation bar -->
-        <ul>
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'about' %}">About</a></li>
-            <li><a href="{% url 'resources' %}">Resources</a></li>
-            <li><a href="{% url 'services' %}">Services</a></li>
-            <li><a href="{% url 'contact' %}">Contact</a></li>
-        </ul>
-    </nav>
+    <header class="header">
+        <h1>{% block header %}Aspyn Analytics{% endblock %}</h1>
+        <div class="navigation">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/services">Services</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </header>
 
-    {% block content %}
-    <!-- Page content will go here -->
-    {% endblock %}
 
-    <footer>
-        <!-- Footer content -->
+    <main class="main-content">
+        {% block content %}
+        <!-- Page specific content will go here -->
+        {% endblock %}
+    </main>
+
+
+    <footer class="footer">
+        {% block footer %}
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section company-name">
+                    <h3>Aspyn Analytics</h3>
+                </div>
+                <div class="footer-section contact-info">
+                    <p>Contact Information:</p>
+                    <ul>
+                        <li>Email: contact@example.com</li>
+                        <li>Phone: (123) 456-7890</li>
+                        <!-- Add more contact details here -->
+                    </ul>
+                </div>
+                <div class="footer-section shortcuts">
+                    <p>Useful Links:</p>
+                    <ul>
+                        <li><a href="/policies">Policies</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <!-- Add more links here -->
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Aspyn Analytics. All rights reserved.</p>
+            </div>
+        </footer>
+        {% endblock %}
     </footer>
 </body>
 </html>
