@@ -1,105 +1,102 @@
 {% extends 'mainapp/base.html' %}
 
 {% load static %}
+
 {% block title %}Home{% endblock %}
 
 {% block content %}
-
-<section id="aspyn-introduction">
-    <div class="banner-container">
-        <img src="{% static 'images/introduction.jpg' %}" alt="Introduction">
+    <!-- Welcome Banner -->
+    <section id="home-banner" class="banner">
+        <img src="{% static 'images/introduction.jpg' %}" alt="Introduction" class="banner-image">
         <div class="banner-content">
-            <div class="logo-and-text">
-                <img src="{% static 'images/tree_logo_gold_on_trans.png' %}" alt="Logo" class="logo-image"> <!-- Logo image -->
-                <div class="banner-text-content">
-                    <h1>Augment Your Vision With Aspyn</h1>
-                    <h2><em>Your Analytical Advantage</em></h2>
-                </div>
-            </div>    
+            <div class="banner-logo">
+                <img src="{% static 'images/tree_logo_gold_on_trans.png' %}" alt="Logo" class="banner-logo">
+            </div>
+            <div class="banner-text-block">
+                <h1>Augment Your Vision With Aspyn</h1>
+                <h2><em>Your Analytic Advantage</em></h2>
+            </div>
         </div>
-    </div>    
-</section>
+    </section>
 
-<section id="aspyn-partner">
-    <div class="partner-content">
-        <div class="partner-text-block">
-            <h2>Your Strategic Partner</h2>
-            <p>At Aspyn Analytics, we specialize in harnessing the 
-                    power of data to revolutionize business strategies.
-                    Our team navigates the complex landscape of text
-                    analytics, predictive modeling, and advanced data
-                    visualization, transforming raw data into strategic
-                    insights and assets. We are not just data scientists; we
-                    are strategic partners dedicated to propelling your
-                    business forward with tailored data-driven
-                    capabilities.</p>
+    <!-- Your Vision Block -->
+    <section id="your-vision-block" class="featured-section">
+        <div class="text-block">
+            <h2>Your Vision</h2>
+            <p> We harness the power of data to revolutionize your strategies and achieve your vision.
+                Navigating the complexities of the data landscape, we ensure ethical data collection, 
+                robust statistical methodologies, and practical implementation, transforming raw data 
+                into your most strategic asset. We are not just data scientists; we are strategic partners 
+                dedicated to propelling your organization forward with data-driven capabilities.</p>
         </div>
-        <div class="partner-image-block">
-            <img src="{% static 'images/strategic_partner.jpg' %}" alt="Strategic Partner">
+        <div class="image-block">
+            <img src="{% static 'images/sketch_cityscape_shaded_720x400.jpeg' %}" alt="Strategic Partner">
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="aspyn-approach">
-    <div class="approach-content">
-        <div class="approach-image-block">
-            <img src="{% static 'images/our_approach.jpg' %}" alt="Our Approach">
+    <!-- Our Approach Tile -->
+    <section id="our-approach-tile" class="featured-section">
+        <div class="image-block">
+            <img src="{% static 'images/leaves_falling_shaded_720x400.jpeg' %}" alt="Our Approach">
         </div>
-        <div class="approach-text-block">
+        <div class="text-block">
             <h2>Our Approach</h2>
-            <p>Our methodology is grounded in collaboration,
-                innovation, and integrity. We work closely with
-                you to understand and serve your unique needs
-                while always upholding responsible data science
-                practices. Your data security and usage are at the
-                forefront of every solution we craft. We support
-                fair accessibility to responsible AI, and strive to
-                bring transformative power to your organization.</p>
+            <p> Our collaborative, agile methodology ensures we continually refine our approach, 
+                adapting to your evolving data science needs. We immerse ourselves in your domain,
+                merging your expert knowledge with advanced data science capabilities, keeping data 
+                security at the forefront of every solution we craft. In bringing these innovations 
+                to your organization, we progress our vision of fair accessibility to responsible AI.</p>
         </div>
-    </div>    
-</section>
+    </section>
 
-<section id="aspyn-capabilities">
-    <div class="capability">
-        <div>
-            <h3>Text Analytics</h3>
-            <p>Explore the expanses of unstructured data stretched across the
-            business landscape to uncover deep textual patterns and powerful
-            predictive features.</p>
-        </div>
-        <div>
-            <h3>Data Visualization</h3>
-            <p>Transform data into compelling, actionable visual stories from
-                web-deployed dashboards to execute video summaries.</p>
-        </div>
-        <div>
-            <h3>Predictive Modeling</h3>
-            <p>Align your data strategies with business goals for maximum
-                impact.</p>
-        </div>
-        <div>
+    <!-- Capabilities Block -->
+    <section id="capabilities-block" class="featured-section">
+        <div class="capabilities-text-block">
+            <h3>Text Analytics and Media Processing</h3>
+            <p>By combining advanced language models with proven statistical techniques, 
+                    we sculpt an unmatched view of vast, unstructured data such as text, videos, 
+                    and data lakes. Augment your insights with powerful predictive variables engineered 
+                    from textual data, ensuring you capitalize on your data landscape as it evolves.</p>
+
             <h3>Strategic Consulting</h3>
-            <p>Anticipate market trends and customer behaviors with precision.</p>
+            <p>For decision-makers seeking to refine their strategy, we bridge the realities 
+                    of operations with analytical depth. Living at the intersection of business 
+                    and technology, we ensure your strategies are innovative and managable.</p>
         </div>
-    </div>
-    <!-- Repeat for other capabilities -->
-</section>
+        <div class="capabilities-text-block">
+            <h3>Data Engineering and Data Aquisition</h3>
+            <p>Whether it's integrating multiple API data sources into an executive dashboard, 
+                    or redefining data requirements for app development, we tailor our data 
+                    science solutions to your business context, delivering a seamless fit 
+                    into your existing operations. Data augmentation boosts your data's predictive 
+                    power by including relevent trends from our real-time data collection.</p>
+            <div class="last-text-box">
+                <h3>Automation and Digital Transformation</h3>
+                <p>Guiding your digital journey, we help automate your operations to free up valuable resources 
+                    and improve efficiency. We strive to deliver intuitive, robust improvements that align 
+                    with your business goals and work culture. We diligently pursure opportunities for automation
+                    and other process improvements, while offering comprehensive onboarding and support.</p>
+            </div>
+        </div>
+        <div class="capabilities-image-block">
+            <img src="{% static 'images/colorful_cityscape_shaded_720x800.jpeg' %}" alt="Colorful City">
+        </div>
+    </section>
 
-<section id="aspyn-services">
-    <h2>Discover Our Services | Packaged Services</h2>
-    <!-- Services content -->
-    <a href="#" class="cta-button">Unlock Your Data's Potential</a>
-</section>
-
-<section id="aspyn-ready">
-    <h2>Ready to unlock the full potential of your data?</h2>
-    <p>Whether you're seeking in-depth analytics, strategic
-        insights, or just starting your data journey, Aspyn
-        Analytics is here to guide you. Download our resources for
-        a deeper understanding of our expertise, or contact us for
-        a personalized consultation.</p>
-    <p>Contact Us | Resources</p>
-    <img src="{% static 'images/ready.jpg' %}" alt="Ready">
-
-
+    <!-- CTA Banner -->
+    <section id="CTA-banner" class="banner">
+        <div class="image-block">
+            <img src="{% static 'images/sketch_cityscape_shaded_720x400.jpeg' %}" alt="Ready">
+        </div>
+        <div class="text-block">
+            <h2>Ready to dive in?</h2>
+            <p>Whether you're seeking in-depth analytics, strategic
+                insights, or just starting your data journey, Aspyn
+                Analytics is here to guide you. Download our resources for
+                a deeper understanding of our expertise, contact us, or complete
+                our client intake form for a free personalized consultation.</p>
+            <p>Contact Us | Resources</p>
+        </div>
+    </section>
+</div>
 {% endblock %}
