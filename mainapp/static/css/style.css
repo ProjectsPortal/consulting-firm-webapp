@@ -428,6 +428,10 @@ p {
     .capabilities-image-block {
         display: none;
     }
+    
+    #CTA-banner {
+        margin-bottom: 200px;
+    }
 
     #CTA-banner .text-block {
         grid-column: 1 / -1; /* Full width for smaller screens */
