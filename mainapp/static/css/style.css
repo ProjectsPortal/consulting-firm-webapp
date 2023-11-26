@@ -80,6 +80,7 @@ p {
     text-decoration: underline;
 }
 
+
 @media only screen and (max-width: 768px) and (min-width: 0) {
     .logo-and-text {
         flex-direction: column;
@@ -141,6 +142,19 @@ p {
 
 }
 
+.banner::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #D4CFC8;
+    position: absolute;
+}
+
+.banner::before {
+    top: 400px;;
+}
+
 /* FEATURED CONTENT BLOCKS */
 .featured-section {
     grid-column: span 12; /* Full width */
@@ -170,16 +184,35 @@ p {
     justify-content: center;
     align-items: flex-start;
     margin: 0 auto;
-    padding: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
     box-sizing: border-box; /* Ensure padding does not increase block size */
     overflow: hidden;
+    text-align:center;
 }
 .text-block h2, .textblock h3, .textblock h4 {
     color:#cfaa60;
-    align-self: flex-start; /* Align title to the start */
+    align-self: self-start; /* Align title to the start */
     width: 100%; /* Full width for the title */
     margin-bottom: 10px; /* Space between title and paragraph */
 }
+
+/* Your Vision Block */
+#your-vision-block {
+    margin-top:0;
+    padding-top: 0;
+    gap:0;
+}
+
+#your-vision-block::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #D4CFC8;
+    position: absolute;
+}
+
 
 /* Adjust order for alternate layout */
 #our-approach-tile .text-block { 
@@ -190,19 +223,6 @@ p {
     grid-column: 1 / 7; 
 }
 
-/* Hide Image if Text Overflows */
-@media (max-width: 900px) {
-    .text-block {
-        max-width: 720px; /* Adjust based on layout */
-    }
-
-    .text-block:overflow {
-        /* When text overflows, hide the adjacent image */
-        ~ .image-block {
-            display: none;
-        }
-    }
-}
 
 /* Capabilities Section */
 #capabilities-block {
@@ -214,6 +234,15 @@ p {
     margin-bottom: 0;
 }
 
+#our-approach-tile .featured-section::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #D4CFC8;
+    position: absolute;
+}
+
 .capabilities-text-block {
     grid-column: span 6; /* Each text block takes half of the left side */
     display: flex;
@@ -223,8 +252,9 @@ p {
     max-height: 800px; /* Height adjusted to match half of the image height */
     max-width: 500px;
     overflow: hidden;
-    padding-left: 60px;
-    padding-right: 10px;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: left;
 }
 
 .capabilities-text-block > div {
@@ -291,11 +321,19 @@ p {
     margin-bottom: 0;
 }
 
+#CTA-banner::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #D4CFC8;
+    position: absolute;
+}
 
 /* Responsive Design */
 @media only screen and (max-width: 900px) {
     /* Stack content in a column for smaller screens */
-    .text-block, .image-block {
+    .text-block, .image-block, #our-approach-tile .text-block { 
         grid-column: 1 / -1; /* Full width */
     }
 }
@@ -376,17 +414,21 @@ p {
         height: auto;
     }
 
+    .text-block {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: 20px;
+        max-width: none;
+    }
     .image-block {
         display:none;
-    }
-    .text-block {
-        align-items: flex-start;
     }
 
     .capabilities-text-block {
         grid-column: 1 / -1; /* Full width for smaller screens */
-        padding-bottom:5px;
-        padding-top:10px;
+        text-align: left;
+        padding-bottom:10%;
+        padding-top:10%;
     }
 
     .capabilities-image-block {
@@ -402,5 +444,19 @@ p {
 
 }
 
+/* Hide Image if Text Overflows */
+@media (max-width: 900px) {
+    .text-block {
+        max-width: 720px; /* Adjust based on layout */
+    }
 
+    .text-block:overflow {
+        /* When text overflows, hide the adjacent image */
+        ~ .image-block {
+            display: none;
+        }
+    }
+    
+
+}
 
