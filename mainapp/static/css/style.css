@@ -234,15 +234,6 @@ p {
     margin-bottom: 0;
 }
 
-#our-approach-tile .featured-section::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: #D4CFC8;
-    position: absolute;
-}
-
 .capabilities-text-block {
     grid-column: span 6; /* Each text block takes half of the left side */
     display: flex;
@@ -397,12 +388,15 @@ p {
         display: block; /* Stack logo and text vertically */
         text-align: left; /* Center align within banner */
     }
+    .banner {
+        margin-bottom: 240px;
+    }
 }
 
 /* Block and tile adjustments for smaller screens */
 @media only screen and (max-width: 900px) {
     #your-vision-block .featured-section {
-        margin-top: 40px;
+        margin-top: 60px;
     }
     
     .featured-section {
@@ -440,6 +434,16 @@ p {
     }
     #CTA-banner .image-block {
         display: none;
+    }
+
+    #your-vision-block::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #D4CFC8;
+        position: absolute;
+        margin-top: 30px;
     }
 
 }
