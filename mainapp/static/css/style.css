@@ -87,11 +87,11 @@ p {
     }
 }
 
-/* BANNERS */
+/* BANNER */
 .banner {
     grid-column: 1 / -1; /* Span all columns */
     position: relative;
-    max-width: 1440px;
+    max-width: 1920px;
     margin-top: 115px;
     margin-bottom: 200px;
     height: 400px;
@@ -99,7 +99,7 @@ p {
 
 .banner-image {
     width: 100%;
-    height:100%;
+    height:400px;
     object-fit: cover;
 }
 
@@ -111,20 +111,22 @@ p {
     display: flex;
     align-items: left;
     justify-content: flex-start;
+    flex-direction: column;
 }
 
 .banner-logo {
-    width: 130px;
+    width: 110px;
     height: auto;
-    padding-left: 5%;
+    padding-left: 2%;
     display: inline-block; /* Align logo and text side by side */
-    margin-right: 20px;
+    margin-right: 15px;
+    margin-top: 15px;
 }
 
 .banner-text-block {
     display: flex;
     flex-direction: column;
-    padding-left: 5%;
+    padding-left: 2%;
     display: inline-block; /* Align logo and text side by side */
     justify-content: center;
 }
@@ -135,7 +137,8 @@ p {
 }
 .banner-text-block h2 {
     color: #D4CFC8;
-    margin: 0;
+    margin-top: 15px;
+
 }
 
 /* FEATURED CONTENT BLOCKS */
@@ -147,28 +150,29 @@ p {
     gap: 0px
 }
 
-.text-block, .image-block {
+.image-block {
     grid-column: span 6; /* Half-width */
+    max-width: 720px;
     height: 400px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow:hidden;
     flex-direction: column;
-}
-
-.image-block {
-    max-width: 720px;
+    align-items: center;
+    justify-content: center;
+    overflow:hidden;
 }
 
 .text-block {
-    display: flex;
     grid-column: span 6;
-    height: 400px;
     max-width: 500px;
-    padding: 0;
-    overflow: hidden;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box; /* Ensure padding does not increase block size */
+    overflow: hidden;
 }
 .text-block h2, .textblock h3, .textblock h4 {
     color:#cfaa60;
@@ -186,13 +190,26 @@ p {
     grid-column: 1 / 7; 
 }
 
+/* Hide Image if Text Overflows */
+@media (max-width: 900px) {
+    .text-block {
+        max-width: 720px; /* Adjust based on layout */
+    }
+
+    .text-block:overflow {
+        /* When text overflows, hide the adjacent image */
+        ~ .image-block {
+            display: none;
+        }
+    }
+}
 
 /* Capabilities Section */
 #capabilities-block {
     grid-column: span 12; /* Full width */
     display: grid;
     grid-template-columns: repeat(12, 1fr); /* 12-column grid */
-    align-items: start; /* Align items to the start of the grid area */
+    align-items: center;
     gap: 0px;
     margin-bottom: 0;
 }
@@ -201,20 +218,36 @@ p {
     grid-column: span 6; /* Each text block takes half of the left side */
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 20px;
-    max-height: 400px; /* Height adjusted to match half of the image height */
+    justify-content: space-between;
+    align-items: center;
+    max-height: 800px; /* Height adjusted to match half of the image height */
     max-width: 500px;
     overflow: hidden;
-    margin-bottom: 0;
-}
-.capabilities-text-block p {
-    margin-bottom: 25px;
+    padding-left: 60px;
+    padding-right: 10px;
 }
 
-.last-text-box p {
+.capabilities-text-block > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    margin-bottom: 10px;
+}
+
+.capabilities-text-block h2 {
+    color:#cfaa60;
+    margin-top: 0;
+    margin-bottom: 0;
+
+}
+.capabilities-text-block p {
+    margin-bottom: 5px;
+}
+
+.fourth-text-box p {
     margin-bottom: 0px;
+    padding-bottom: 0;
 }
 
 .capabilities-image-block {
@@ -237,6 +270,10 @@ p {
     margin-bottom: -10px; /* Space between title and description */
 }
 
+.third-text-box h3 {
+    margin-top: -30px auto;
+}
+
 /* CTA Banner */
 #CTA-banner {
     display: grid;
@@ -256,7 +293,7 @@ p {
 
 
 /* Responsive Design */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 900px) {
     /* Stack content in a column for smaller screens */
     .text-block, .image-block {
         grid-column: 1 / -1; /* Full width */
@@ -317,7 +354,7 @@ p {
 
 /* MEDIA QUERIES */
 /* Banner content adjustment for smaller screens */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 900px) {
     .banner-logo, .banner-text-block {
         display: block; /* Stack logo and text vertically */
         text-align: left; /* Center align within banner */
@@ -325,7 +362,11 @@ p {
 }
 
 /* Block and tile adjustments for smaller screens */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 900px) {
+    #your-vision-block .featured-section {
+        margin-top: 40px;
+    }
+    
     .featured-section {
         grid-template-columns: 1fr;
     }
@@ -344,11 +385,21 @@ p {
 
     .capabilities-text-block {
         grid-column: 1 / -1; /* Full width for smaller screens */
+        padding-bottom:5px;
+        padding-top:10px;
     }
 
     .capabilities-image-block {
         display: none;
     }
+
+    #CTA-banner .text-block {
+        grid-column: 1 / -1; /* Full width for smaller screens */
+    }
+    #CTA-banner .image-block {
+        display: none;
+    }
+
 }
 
 
