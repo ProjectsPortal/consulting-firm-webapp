@@ -17,3 +17,14 @@ document.addEventListener('DOMContentLoaded', function () {
         dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
     });
 });
+
+document.addEventListener('click', function(event) {
+    var isClickInsideMenu = document.querySelector('.dropdown-menu').contains(event.target);
+    var isClickOnToggle = document.querySelector('.nav-toggle').contains(event.target);
+
+    // Hide dropdown if click is outside the menu and not on the toggle button
+    if (!isClickInsideMenu && !isClickOnToggle) {
+        document.querySelector('.nav-toggle').classList.remove('active');
+        document.querySelector('.dropdown-menu').style.display = 'none';
+    }
+});

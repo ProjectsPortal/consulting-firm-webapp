@@ -41,13 +41,19 @@ p {
     color: #232323; /* Dark text */
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* keep items on the left and right */
     padding: 10px 5%;
     position: fixed;
-    top:0;
-    left:0;
-    right:0;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
+}
+/* Logo and Title Container */
+.logo-and-title-container {
+    display: flex;
+    align-items: center;
+    margin-right: 120px;
 }
 
 .logo-container {
@@ -58,13 +64,12 @@ p {
 .logo-image {
     opacity: 1;
     width: 110px;
-    margin-right: 15px;
 }
 
 .logo {
     opacity: 1;
-    width: 90px; /* Adjust as needed */
-    padding-right: 10px;
+    width: 90px; 
+    margin-right: 20px;  /*space between logo and title */
 }
 
 .navigation {
@@ -93,8 +98,14 @@ p {
     background-color:#D4CFC8;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     border: none;
+    position: fixed;
+    z-index: 1500;
+    top: 10px;
+    right:10px;
+    top: 2.5%; /* Align to the middle of the header */
+    right: 30px;
+
 }
 
 .hamburger {
@@ -102,7 +113,7 @@ p {
     width: 40px;
     height: 5px;
     background-color: #232323;
-    position:relative;
+    position:fixed;
     align-self: center;
     display: flex;
     margin: 6px 0;
@@ -124,13 +135,13 @@ p {
     display: none; /* hidden by default */
     flex-direction: column; /* stack items vertically*/
     position: absolute; /* position below nav-toggle button */
-    right: 5%; /* align right */
-    top: 60px; /* position below nav-toggle button */
+    right: 0; /* align right */
+    top: 122px; /* position below nav-toggle button */
     background-color:#D4CFC8;
     border-radius: 5px; /* rounded corners */
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* add a shadow */
     z-index: 1; /* ensure it's above other elements */
-    width: 200px; /* width of the dropdown */
+    width: 300px; /* width of the dropdown */
 }
 
 .dropdown-menu a {
@@ -138,6 +149,10 @@ p {
     text-decoration: none; /* no underline */
     display: block; /* each link a block to fill horiz space */
     color: #232323; /* text color */
+    text-align: right;
+    font-size: 28px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .dropdown-menu a:hover {
