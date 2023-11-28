@@ -423,16 +423,6 @@ p {
         max-width: none;
     }
 
-    #our-approach-tile::after {
-        content: "";
-        display: block;
-        width: 100%;
-        max-width: 1440px;
-        height: 2px;
-        background-color: #D4CFC8;
-        position: absolute;
-        bottom: -380px;
-    }
 
     #our-approach-tile .image-block {
         display: none;
