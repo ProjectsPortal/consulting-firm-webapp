@@ -20,7 +20,8 @@ h2 {
 
 p {
     color: #D4CFC8; /* Light grey color for paragraph text */
-    font-size: 16px;
+    font-size: 17px;
+    text-align: left;
 }
 
 /* GLOBAL GRID CONTAINER */
@@ -391,20 +392,52 @@ p {
         text-align: left; /* Center align within banner */
     }
     .banner {
-        margin-bottom: 240px;
+        margin-bottom: 260px;
     }
 }
 
 /* Block and tile adjustments for smaller screens */
 @media only screen and (max-width: 1000px) {
+
+    p {
+        color: #D4CFC8; /* Light grey color for paragraph text */
+        font-size: 24px;
+    }
+
+    h1 {
+        font-size: 42px
+    }
+    
+    h2 {
+        font-size: 34px;
+    }
+    h3 {
+        font-size: 30px;
+    }
+    
     #your-vision-block .text-block {
         margin-top: 30px;
     }
 
     #your-vision-block .image-block {
-        overflow: hidden;
-        max-width: 100%;
-        max-height: 300px;
+        grid-column: 1 / -1; /* Span all columns */
+        width: 100vw; /* Full viewport width */
+        max-width: 100%; /* Ensure it doesn't exceed the container's width */
+        height: 300px; /* Fixed height */
+        overflow: hidden; /* Hide overflow */
+        position: relative; /* Required for absolute positioning of child elements */
+        margin: 0; /* Reset any margins */
+        padding: 0; /* Reset any padding */
+    }
+    
+    #your-vision-block .image-block img {
+        width: 100%; /* Stretch to fill the container */
+        height: 100%; /* Stretch to fill the container */
+        object-fit: cover; /* Cover the area, maintaining aspect ratio */
+        position: absolute; /* Position absolutely within its parent */
+        top: 50%; /* Align center vertically */
+        left: 50%; /* Align center horizontally */
+        transform: translate(-50%, -50%); /* Offset by half its own size */
     }
     
     .featured-section {
@@ -431,6 +464,13 @@ p {
     .capabilities-text-block {
         grid-column: 1 / -1; /* Full width for smaller screens */
         text-align: left;
+        padding-bottom:10%;
+        padding-top:10%;
+    }
+
+    .capabilities-text-block h2 {
+        grid-column: 1 / -1; /* Full width for smaller screens */
+        text-align: center;
         padding-bottom:10%;
         padding-top:10%;
     }
