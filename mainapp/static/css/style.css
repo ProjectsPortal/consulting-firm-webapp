@@ -208,6 +208,7 @@ p {
     content: "";
     display: block;
     width: 100%;
+    max-width: 1440px;
     height: 2px;
     background-color: #D4CFC8;
     position: absolute;
@@ -316,6 +317,7 @@ p {
     content: "";
     display: block;
     width: 100%;
+    max-width: 1440px;
     height: 2px;
     background-color: #D4CFC8;
     position: absolute;
@@ -428,7 +430,7 @@ p {
     .capabilities-image-block {
         display: none;
     }
-    
+
     #CTA-banner {
         margin-bottom: 200px;
     }
@@ -441,7 +443,7 @@ p {
     }
 
     #your-vision-block::before {
-        content: "";
+        content: "";   
         display: block;
         width: 100%;
         height: 2px;
