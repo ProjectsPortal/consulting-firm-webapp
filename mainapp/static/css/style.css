@@ -324,7 +324,7 @@ p {
 }
 
 /* Responsive Design */
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1000px) {
     /* Stack content in a column for smaller screens */
     .text-block, .image-block, #our-approach-tile .text-block { 
         grid-column: 1 / -1; /* Full width */
@@ -396,9 +396,15 @@ p {
 }
 
 /* Block and tile adjustments for smaller screens */
-@media only screen and (max-width: 900px) {
-    #your-vision-block .featured-section {
-        margin-top: 60px;
+@media only screen and (max-width: 1000px) {
+    #your-vision-block .text-block {
+        margin-top: 30px;
+    }
+
+    #your-vision-block .image-block {
+        overflow: hidden;
+        max-width: 100%;
+        max-height: 300px;
     }
     
     .featured-section {
@@ -416,8 +422,20 @@ p {
         padding: 20px;
         max-width: none;
     }
-    .image-block {
-        display:none;
+
+    #our-approach-tile::after {
+        content: "";
+        display: block;
+        width: 100%;
+        max-width: 1440px;
+        height: 2px;
+        background-color: #D4CFC8;
+        position: absolute;
+        bottom: -380px;
+    }
+
+    #our-approach-tile .image-block {
+        display: none;
     }
 
     .capabilities-text-block {
@@ -455,7 +473,7 @@ p {
 }
 
 /* Hide Image if Text Overflows */
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .text-block {
         max-width: 720px; /* Adjust based on layout */
     }
