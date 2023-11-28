@@ -18,6 +18,7 @@ h2 {
     font-size: 30px;
 }
 
+
 p {
     color: #D4CFC8; /* Light grey color for paragraph text */
     font-size: 17px;
@@ -110,7 +111,7 @@ p {
 
 .hamburger {
     content: '';
-    width: 40px;
+    width: 50px;
     height: 5px;
     background-color: #232323;
     position:fixed;
@@ -122,7 +123,7 @@ p {
 .hamburger::before, .hamburger::after {
     content: '';
     position: relative;
-    width: 40px;
+    width: 50px;
     height: 5px;
     background-color: #232323;
 } 
@@ -141,7 +142,7 @@ p {
     border-radius: 5px; /* rounded corners */
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* add a shadow */
     z-index: 1; /* ensure it's above other elements */
-    width: 300px; /* width of the dropdown */
+    width: 400px; /* width of the dropdown */
 }
 
 .dropdown-menu a {
@@ -150,9 +151,9 @@ p {
     display: block; /* each link a block to fill horiz space */
     color: #232323; /* text color */
     text-align: right;
-    font-size: 28px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    font-size: 32px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .dropdown-menu a:hover {
@@ -160,12 +161,7 @@ p {
 }
 
 
-@media only screen and (max-width: 1000px) and (min-width: 0) {
-    .logo-and-text {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
+
 
 /* BANNER */
 .banner {
@@ -389,7 +385,7 @@ p {
 
 #CTA-banner .text-block {
     grid-column: 7 / -1; /* Text on the right (last 6 columns) */
-    margin-bottom: 0;
+    margin-bottom: 10px;
 }
 
 #CTA-banner::before {
@@ -402,13 +398,7 @@ p {
     position: absolute;
 }
 
-/* Responsive Design */
-@media only screen and (max-width: 1000px) {
-    /* Stack content in a column for smaller screens */
-    .text-block, .image-block, #our-approach-tile .text-block { 
-        grid-column: 1 / -1; /* Full width */
-    }
-}
+
 
 
 /* FOOTER */
@@ -463,8 +453,24 @@ p {
 }
 
 /* MEDIA QUERIES */
+
+/* Responsive Design */
+@media only screen and (max-width: 1050px) {
+    /* Stack content in a column for smaller screens */
+    .text-block, .image-block, #our-approach-tile .text-block { 
+        grid-column: 1 / -1; /* Full width */
+    }
+}
+
+@media only screen and (max-width: 1050px) and (min-width: 0) {
+    .logo-and-text {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
 /* Banner content adjustment for smaller screens */
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1050px) {
     .banner-logo, .banner-text-block {
         display: block; /* Stack logo and text vertically */
         text-align: left; /* Center align within banner */
@@ -480,22 +486,22 @@ p {
 }
 
 /* Block and tile adjustments for smaller screens */
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1050px) {
 
     p {
         color: #D4CFC8; /* Light grey color for paragraph text */
-        font-size: 24px;
+        font-size: 28px;
     }
 
     h1 {
-        font-size: 42px
+        font-size: 44px
     }
     
     h2 {
-        font-size: 34px;
+        font-size: 36px;
     }
     h3 {
-        font-size: 30px;
+        font-size: 32px;
     }
     
     #your-vision-block .text-block {
@@ -546,7 +552,8 @@ p {
 
     .capabilities-text-block {
         grid-column: 1 / -1; /* Full width for smaller screens */
-        text-align: left;
+        max-width: none;
+        text-align: center;
         padding-bottom:10%;
         padding-top:10%;
     }
@@ -559,7 +566,15 @@ p {
     }
 
     .capabilities-image-block {
-        display: none;
+        display: flex-start;
+        position: relative;
+        grid-column: 1 / -1; /* Full width for smaller screens */
+        max-height: 300px;
+        height: auto;
+        width:100%;
+        object-fit: contain;
+        object-position: center;
+        overflow: cover;
     }
 
     #CTA-banner {
@@ -570,7 +585,24 @@ p {
         grid-column: 1 / -1; /* Full width for smaller screens */
     }
     #CTA-banner .image-block {
-        display: none;
+        grid-column: 1 / -1; /* Span all columns */
+        width: 100vw; /* Full viewport width */
+        max-width: 100%; /* Ensure it doesn't exceed the container's width */
+        height: 300px; /* Fixed height */
+        overflow: hidden; /* Hide overflow */
+        position: relative; /* Required for absolute positioning of child elements */
+        margin: 0; /* Reset any margins */
+        padding: 0; /* Reset any padding */
+    }
+    
+    #CTA-banner .image-block img {
+        width: 100%; /* Stretch to fill the container */
+        height: 100%; /* Stretch to fill the container */
+        object-fit: cover; /* Cover the area, maintaining aspect ratio */
+        position: absolute; /* Position absolutely within its parent */
+        top: 50%; /* Align center vertically */
+        left: 50%; /* Align center horizontally */
+        transform: translate(-50%, -50%); /* Offset by half its own size */
     }
 
     #your-vision-block::before {
@@ -586,7 +618,7 @@ p {
 }
 
 /* Hide Image if Text Overflows */
-@media (max-width: 1000px) {
+@media (max-width: 1050px) {
     .text-block {
         max-width: 720px; /* Adjust based on layout */
     }
