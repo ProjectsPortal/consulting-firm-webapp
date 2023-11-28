@@ -4,13 +4,27 @@
 <head>
     <title>{% block title %}Aspyn Analytics{% endblock %}</title>
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <script src="{% static 'js/nav-menu.js' %}"></script>
 </head>
 
 <body>
     <header class="header">
         <img src="{%static 'images/tree_logo_charcoal_on_trans.png' %}", alt='logo_white', class='logo'>
         <h1>{% block header %}Aspyn Analytics{% endblock %}</h1>
+
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+
         <div class="navigation">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/resources">Resources</a>
+            <a href="/services">Services</a>
+            <a href="/contact">Contact</a>
+        </div>
+
+        <div class="dropdown-menu">
             <a href="/">Home</a>
             <a href="/about">About</a>
             <a href="/resources">Resources</a>

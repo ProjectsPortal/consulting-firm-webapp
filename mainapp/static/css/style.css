@@ -63,7 +63,7 @@ p {
 
 .logo {
     opacity: 1;
-    width: 60px; /* Adjust as needed */
+    width: 90px; /* Adjust as needed */
     padding-right: 10px;
 }
 
@@ -72,17 +72,80 @@ p {
     margin: 10px 0;
     margin-left: auto;
 }
+
 .navigation a {
     margin: 0 10px;
     text-decoration: none;
     color: #232323;
 }
+
 .navigation a:hover {
     text-decoration: underline;
 }
 
+.nav-toggle {
+    display: none;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    outline:none;
+    margin-left:auto;
+    background-color:#D4CFC8;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: none;
+}
 
-@media only screen and (max-width: 768px) and (min-width: 0) {
+.hamburger {
+    content: '';
+    width: 40px;
+    height: 5px;
+    background-color: #232323;
+    position:relative;
+    align-self: center;
+    display: flex;
+    margin: 6px 0;
+}
+
+.hamburger::before, .hamburger::after {
+    content: '';
+    position: relative;
+    width: 40px;
+    height: 5px;
+    background-color: #232323;
+} 
+
+.hamburger::before { top: -22px; right: 0px; }
+.hamburger::after { top: 22px; right: 0px;}
+
+/* mobile drop down nav menu */
+.dropdown-menu {
+    display: none; /* hidden by default */
+    flex-direction: column; /* stack items vertically*/
+    position: absolute; /* position below nav-toggle button */
+    right: 5%; /* align right */
+    top: 60px; /* position below nav-toggle button */
+    background-color:#D4CFC8;
+    border-radius: 5px; /* rounded corners */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* add a shadow */
+    z-index: 1; /* ensure it's above other elements */
+    width: 200px; /* width of the dropdown */
+}
+
+.dropdown-menu a {
+    padding: 12px 16px; /* padding each link */
+    text-decoration: none; /* no underline */
+    display: block; /* each link a block to fill horiz space */
+    color: #232323; /* text color */
+}
+
+.dropdown-menu a:hover {
+    background-color:#aba2b4; /* pastel lilac */
+}
+
+
+@media only screen and (max-width: 1000px) and (min-width: 0) {
     .logo-and-text {
         flex-direction: column;
         align-items: flex-start;
@@ -386,14 +449,19 @@ p {
 
 /* MEDIA QUERIES */
 /* Banner content adjustment for smaller screens */
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1000px) {
     .banner-logo, .banner-text-block {
         display: block; /* Stack logo and text vertically */
         text-align: left; /* Center align within banner */
     }
-    .banner {
-        margin-bottom: 260px;
-    }
+
+    .banner { margin-bottom: 260px; }
+
+    .nav-toggle { display: flex; }
+    .navigation { display: none; }
+    .navigation--visible { display: block; }
+    .navigation a { display: none; }
+    .navigation a:hover { display: none;}
 }
 
 /* Block and tile adjustments for smaller screens */
