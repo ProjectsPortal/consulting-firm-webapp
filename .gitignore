@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Django
+*.log
+*.pot
+*.pyc
+*.pyo
+.env
+.venv/
+.idea/
+.vscode/
+node_modules/
+
+# Secrets
+config.py
+secrets.json
