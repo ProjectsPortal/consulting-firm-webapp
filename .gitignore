@@ -1,5 +1,6 @@
 # Python
 __pycache__/
+**/__pycache__/
 *.pyc
 *.pyo
 *.pyd
@@ -17,7 +18,13 @@ db.sqlite3
 .idea/
 .vscode/
 node_modules/
+**/admin.py
+*.DS_Store
 
 # Secrets
 config.py
 secrets.json
+
+# Copy files
+License.html
+README.html

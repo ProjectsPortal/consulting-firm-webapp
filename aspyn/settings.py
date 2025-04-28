@@ -23,12 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: Keep secret!
-SECRET_KEY = config('DJANGO_SECRET_KEY')
+SECRET_KEY = config('DJANGO_SECRET_KEY_HERE')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1', 'aspynanalytics.com', 'www.aspynanalytics.com']
+ALLOWED_HOSTS = ['list of access points']
 
 
 # Application definition
