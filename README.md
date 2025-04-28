@@ -1,55 +1,88 @@
-# Aspyn Consulting Web Application
+# Web Application for Aspyn Analytics Consulting Firm
 
-Lightweight, full-stack Django web application designed for a mock consulting firm.
-Features responsive design, mobile optimization, secure static file handling, and real production deployment to a live domain.
+This project is a full-stack Django web application featuring responsive mobile-optimized design, structured static file handling, and live deployment to a secured domain. 
 
-Built with Django 4.2, custom CSS/JS, and deployed via Heroku.
+This repository provides a sanitized demonstration, framed as the public-facing delivery for a fictional consulting client, Aspyn Analytics. The live deployment was based on a private production repository following real-world development practices.
+
+Built with Django 4.2, custom HTML/CSS/JS, and deployed via Heroku infrastructure.
+
+Visit the live deployment (secured HTTPS domain): https://aspynanalytics.com/
 
 ---
 
 ## Overview
 
-This project delivers a fully responsive web application for a hypothetical consulting firm, simulating a real-world client engagement. It demonstrates:
+This project delivers a fully responsive web application for a fictionalized consulting firm, simulating a real-world client engagement.
 
-- End-to-end web development with Django
-- Full-stack deployment practices (Gunicorn, Whitenoise, environment variables)
-- Mobile-first responsive design
-- Secure, scalable static asset handling
-- Minimalist JavaScript UX enhancements
+### Client Use Case
 
-The project highlights the ability to build and deploy production-grade applications while balancing technical precision and user experience.
+Aspyn Analytics, a newly formed consulting firm specializing in analytics and data science, sought to establish a professional digital presence with:
+- A clean, mature, subtly premium design aesthetic
+- A modular, scalable site structure for easy expansion of planned site content
+- Branding support (color scheme, logos, thematic imagery)
+- Strong mobile optimization to showcase the site on tablets and phones during conferences
+- Minimal technical overhead, allowing internal teams to update content without extensive developer support
 
-A live version is hosted [here](https://yourdomainhere.com) (HTTPS-secured).
+This project simulates a real-world client engagement, delivering a public-facing web application aligned to these needs.
 
----
+### Delivery
+
+This project delivers a fully responsive Django web application for Aspyn Analytics, simulating an end-to-end client solution.
+
+Key outcomes:
+- Modular Django 4.2 web app built for intuitive extensibility and low maintenance
+- Mobile-friendly, responsive layout optimized for tablet and conference usage
+- Custom branding package including logo design, color palette, and styling integration
+- Efficient static asset management using Whitenoise middleware
+- Secure live deployment via GitHub-to-Heroku pipeline with SSL and custom DNS
+- Lightweight JavaScript enhancements for mobile navigation UX enhancement
+
+The homepage was fully designed and implemented to production standards, while additional pages (*About*, *Resources*, *Services*, *Contact*) were scaffolded for future client-driven content population, showcasing a modular site architecture.
+
+A live deployment of the application is available here (HTTPS-secured): https://aspynanalytics.com
+
 
 ## Features
 
-- Responsive homepage with dynamic banner and modular content sections
-- Mobile-optimized navigation with hamburger menu and click-off behavior
-- Dark-themed visual design with structured featured blocks
-- Dynamic text/image alternation across content blocks
-- Fully secured domain with HTTPS
-- Backend powered by Django ORM and settings
-- Configurable for local SQLite development or cloud-hosted Postgres
-- Production-ready deployment pipeline via Heroku
-- Lightweight vanilla JavaScript for mobile UX (no external JS libraries)
+#### Frontend Design
+- Responsive homepage built with a 12-column CSS Grid system
+- Dynamic stacking and reflow of content for mobile devices
+- Mobile-optimized navigation with custom hamburger menu and click-off behavior
+- Modular HTML/CSS component design for maintainability and scalability
+- Dark-themed visual identity with custom brand-accented color palette and imagery
+- Lightweight vanilla JavaScript UX enhancements (no external libraries)
+
+#### Backend & Infrastructure
+- Django 4.2 backend with ORM-driven structure
+- Local development using SQLite, production-ready for PostgreSQL
+- Static file serving and compression via Whitenoise
+- Secure deployment pipeline through Heroku
+- Private GitHub repository integrated with Heroku Continuous Deployment (CD) pipeline
+
+#### Hosting & Security
+- SSL/TLS-secured domain with HTTPS enforcement
+- Custom DNS configuration for domain pointing (Namecheap/GoDaddy/Cloudflare analog, depending on your real registrar)
+- Environment-variable based secret management (using python-decouple)
+- Heroku resource configuration for stable runtime performance with lightweight dynos
 
 ---
 
 ## Application Interface
 
-The web application offers a clean, modern interface designed for strategic communication:
-
-- Welcome banner with animated logo and brand messaging
-- Featured content sections: "Your Vision," "Our Approach," "Capabilities," "Call to Action"
-- Strategic use of curated images alongside structured text blocks
-- Smooth transitions across mobile, tablet, and desktop devices
+On larger screens, the homepage presents a multi-column layout with alternating text and image sections. Structured featured blocks introduce key themes (Your Vision, Our Approach, Capabilities, Call to Action), while strategic use of whitespace and curated imagery supports easy navigation and brand messaging.
 
 <p align="center">
-  <img src="images/mobile_view_example.png" alt="Mobile View Example" width="300"/>
+  <img src="assets/desktop_interface.png" alt="Desktop Homepage" width="800"/>
 </p>
+<p align="center"><em>Figure: Desktop homepage view.</em></p>
 
+
+On mobile devices, the layout responsively stacks content vertically. The navigation collapses into a hamburger menu, interactive elements adapt for touch inputs, and imagery and text blocks resize appropriately to maintain readability and accessibility without external JavaScript frameworks.
+
+
+<p align="center">
+  <img src="assets/mobile_interface.png" alt="Mobile Homepage" width="200"/>
+</p>
 <p align="center"><em>Figure: Mobile-optimized view with responsive grid adjustment.</em></p>
 
 ---
@@ -64,7 +97,7 @@ The web application offers a clean, modern interface designed for strategic comm
 | Environment Variables  | python-decouple                                  |
 | Deployment Platform    | Heroku                                           |
 | Frontend Styling       | Custom CSS grid (mobile-first responsive design) |
-| Frontend Interactivity | Vanilla JavaScript                               |
+| Frontend Interactivity | JavaScript                               |
 
 ---
 
@@ -97,38 +130,6 @@ The web application offers a clean, modern interface designed for strategic comm
 
 ---
 
-## Installation (Local Development)
-
-### Requirements
-- Python 3.10+
-- pip (Python package installer)
-
-### Setup
-```bash
-# Clone the repository
-git clone https://github.com/yourgithub/consulting-firm-webapp.git
-cd consulting-firm-webapp
-
-# Create a virtual environment
-python -m venv env
-source env/bin/activate  # macOS/Linux
-# OR
-env\Scripts\activate.bat # Windows
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run migrations (if database used)
-python manage.py migrate
-
-# Start local server
-python manage.py runserver
-```
-
-Then open `http://127.0.0.1:8000/` in your browser.
-
----
-
 ## Project Structure
 
 ```
@@ -139,15 +140,15 @@ consulting-firm-webapp/
 ├── requirements.txt          # Python dependencies
 ├── Procfile                  # Heroku deployment configuration
 ├── manage.py                 # Django project runner
-└── README.md                  # Project documentation
+├── README.md                 # Project documentation
+└── Licence.md                # Project license
 ```
 
 ---
 
 ## License
 
-This project is released under the **Creative Commons Zero v1.0 Universal (CC0 1.0)** license.
-Commercial reproduction of custom images and styling is discouraged.
+This project is released under the **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International** license. You may not use creative materials for commercial purposes.
 
 ---
 
@@ -160,9 +161,6 @@ Commercial reproduction of custom images and styling is discouraged.
 
 ---
 
-> 📊 **Professional Note:** This project represents a mock consulting firm site, intended to simulate real-world client deliverables. It highlights both backend configuration and frontend design proficiency while maintaining production deployment standards.
+> **Professional Note:** This project represents a mock consulting firm site, intended to demonstrate real-world client delivery. Any likeness to real commerical entitities is coincidental. It highlights both backend configuration and frontend design proficiency while maintaining production deployment standards.
 
----
-
-Ready to push when you are! (We can also customize slightly depending on domain name or if you want to add any screenshots before finalizing.)
 
