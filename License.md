@@ -1,6 +1,6 @@
 Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International
 
-This is a human-readable summary of (and not a substitute for) the license. See the full license at https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.
+This repository is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. Full terms available at: https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode."
 
 You are free to:
 - **Share** — copy and redistribute the material in any medium or format

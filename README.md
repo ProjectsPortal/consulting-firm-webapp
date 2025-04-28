@@ -14,7 +14,7 @@ Visit the live deployment (secured HTTPS domain): https://aspynanalytics.com/
 
 This project delivers a fully responsive web application for a fictionalized consulting firm, simulating a real-world client engagement.
 
-### Client Use Case
+#### Client Use Case
 
 Aspyn Analytics, a newly formed consulting firm specializing in analytics and data science, sought to establish a professional digital presence with:
 - A clean, mature, subtly premium design aesthetic
@@ -25,7 +25,7 @@ Aspyn Analytics, a newly formed consulting firm specializing in analytics and da
 
 This project simulates a real-world client engagement, delivering a public-facing web application aligned to these needs.
 
-### Delivery
+#### Delivery
 
 This project delivers a fully responsive Django web application for Aspyn Analytics, simulating an end-to-end client solution.
 
@@ -69,6 +69,8 @@ A live deployment of the application is available here (HTTPS-secured): https://
 
 ## Application Interface
 
+#### Desktop Layout
+
 On larger screens, the homepage presents a multi-column layout with alternating text and image sections. Structured featured blocks introduce key themes (Your Vision, Our Approach, Capabilities, Call to Action), while strategic use of whitespace and curated imagery supports easy navigation and brand messaging.
 
 <p align="center">
@@ -76,6 +78,7 @@ On larger screens, the homepage presents a multi-column layout with alternating 
 </p>
 <p align="center"><em>Figure: Desktop homepage view.</em></p>
 
+#### Mobile Layout
 
 On mobile devices, the layout responsively stacks content vertically. The navigation collapses into a hamburger menu, interactive elements adapt for touch inputs, and imagery and text blocks resize appropriately to maintain readability and accessibility without external JavaScript frameworks.
 
@@ -136,12 +139,14 @@ On mobile devices, the layout responsively stacks content vertically. The naviga
 consulting-firm-webapp/
 ├── aspyn/                    # Django project settings and WSGI application
 ├── mainapp/                  # Django app with views, templates, static assets
-├── static/                   # Collected static files for production
+│   ├── static/               # Custom CSS, JS, and images
+│   └── templates/            # HTML templates
+├── assets/                   # Project documentation assets (readme images)
 ├── requirements.txt          # Python dependencies
 ├── Procfile                  # Heroku deployment configuration
 ├── manage.py                 # Django project runner
 ├── README.md                 # Project documentation
-└── Licence.md                # Project license
+└── LICENSE                   # Project license
 ```
 
 ---
