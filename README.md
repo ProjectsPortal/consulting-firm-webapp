@@ -61,7 +61,7 @@ A live deployment of the application is available here (HTTPS-secured): https://
 
 #### Hosting & Security
 - SSL/TLS-secured domain with HTTPS enforcement
-- Custom DNS configuration for domain pointing (Namecheap/GoDaddy/Cloudflare analog, depending on your real registrar)
+- Custom DNS configuration for domain pointing
 - Environment-variable based secret management (using python-decouple)
 - Heroku resource configuration for stable runtime performance with lightweight dynos
 
@@ -99,7 +99,7 @@ On mobile devices, the layout responsively stacks content vertically. The naviga
 | Static Files Handling  | Whitenoise                                       |
 | Environment Variables  | python-decouple                                  |
 | Deployment Platform    | Heroku                                           |
-| Frontend Styling       | Custom CSS grid (mobile-first responsive design) |
+| Frontend Styling       | Custom CSS grid (mobile responsive design) |
 | Frontend Interactivity | JavaScript                               |
 
 ---
@@ -166,6 +166,6 @@ This project is released under the **Creative Commons Attribution-NonCommercial-
 
 ---
 
-> **Professional Note:** This project represents a mock consulting firm site, intended to demonstrate real-world client delivery. Any likeness to real commerical entitities is coincidental. It highlights both backend configuration and frontend design proficiency while maintaining production deployment standards.
+> **Professional Note:** This project represents a mock consulting firm site, intended to demonstrate real-world client delivery. Any likeness to real commerical entitities is coincidental.
 
 
